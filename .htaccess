@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^dashboard index.php?halaman=dashboard [NC,QSA]
+#Warga
+RewriteRule ^warga index.php?halaman=warga [NC,QSA]
+RewriteRule ^tambah-warga index.php?halaman=tambah-warga [NC,QSA]
+RewriteRule ^edit-warga/([^\/]+)(\/|)$ index.php?halaman=edit-warga&nik=$1 [NC,QSA]
+RewriteRule ^hapus-warga/([^\/]+)(\/|)$ index.php?halaman=hapus-warga&nik=$1 [NC,QSA]
+#Pengguna
+RewriteRule ^akun/([^\/]+)(\/|)$ akun.php?halaman=$1 [NC,QSA]
+#Tentang
+RewriteRule ^tentang index.php?halaman=tentang [NC,QSA]
